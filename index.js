@@ -66,12 +66,19 @@ app.get('/lotto', (req, res) => {
   // if(newNum.length !== 3){
   //   return res.status(400).send('please give exactly 6 numbers');
   // }
-
+  console.log(check.filter(i => i ===true).length);
+  console.log(newNum);
+  console.log(randomNums);
+  if(check.filter(i => i === true).length < 4){
+    return res.send('Sorry, you lose!');
+  }
+  else if(check.filter(i => i === true).length === 4)
+    return res.send('You win a free ticket!')
+  else if(check.filter(i => i === true).length ===5)
+    return res.send('You win $100');
+  else
+    return res.send('Wow! Unbelievable! You could have won the mega millions!')
   
-  
-
-  res.send(check);
-
 });
 
 
