@@ -59,8 +59,8 @@ app.get('/lotto', (req, res) => {
 
   const check = [];
 
-  for(let i = 0; 1 < randomNums.length; i++){
-    ( randomNums.includes(newNum[i]));
+  for(let i = 0; i < randomNums.length; i++){
+    ( check.push(randomNums.includes(newNum[i])));
   }
 
   // if(newNum.length !== 3){
